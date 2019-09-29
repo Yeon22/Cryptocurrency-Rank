@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/common/Header';
+import './index.css';
 
-function App() {
+const App = () => {
+  const title = 'React Coin';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+
+      <h1>{title}</h1>
+
+      <p>Up to date crypto currencies financial data</p>
     </div>
   );
-}
+};
 
 export default App;
