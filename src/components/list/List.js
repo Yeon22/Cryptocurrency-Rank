@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../common/Loading';
 import { handleResponse } from '../../helpers';
 import { API_URL } from '../../config';
 import './Table.css';
@@ -39,10 +40,13 @@ class List extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    const { loading, error, currencies } = this.state;
+    if (loading) {
+      return <div className="loading-container"><Loading /></div>
+    }
 
-    if (this.state.loading) {
-      return <div>Loading...</div>
+    if (error) {
+      return <div className="error">{this.state.error}</div>
     }
 
     return (
@@ -58,7 +62,7 @@ class List extends React.Component {
           </thead>
 
           <tbody className="Table-body">
-            {this.state.currencies.map(currency => (
+            {currencies.map(currency => (
               <tr key={currency.id}>
                 <td>
                   <span className="Table-rank">{currency.rank}</span>
