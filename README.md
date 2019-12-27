@@ -6,4 +6,8 @@ In the project directory, you can run:
 
 ### `npm start`
 OR
-### `node server.js`
+### `node src/server.js`
+OR
+### `serve -s`
+
+## [Show it now!](https://cryptocurrency-rank.herokuapp.com/)
